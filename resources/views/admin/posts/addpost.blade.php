@@ -71,7 +71,7 @@ $categories = DB::table('categories')->get();
 @endsection
 
 @section('script')
-    <script src="//cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+    <script src="//cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
 
     <script type="text/javascript">
     $(document).ready(function () {
@@ -82,7 +82,7 @@ $categories = DB::table('categories')->get();
     <script type="text/javascript">
     CKEDITOR.replace('wysiwyg-editor', {
         filebrowserUploadUrl: "{{route('store.post', ['_token' => csrf_token() ])}}",
-        filebrowserUploadMethod: 'form'
+        filebrowserUploadMethod: 'form',
     });
     </script>
 @endsection
