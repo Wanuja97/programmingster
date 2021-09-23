@@ -63,10 +63,37 @@
                                   <span class="nav-text">All Categories</span>
                                   
                                 </a>
-            
+                              </li>
                       </div>
                     </ul>
                   </li>
+
+                  <li  class="has-sub active expand">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#contact"
+                      aria-expanded="false" aria-controls="contact">
+                      <i class="mdi mdi-folder-multiple-outline"></i>
+                      <span class="nav-text">Contact Details</span> 
+                    </a>
+                     <ul  class="collapse show"  id="contact"
+                      data-parent="#sidebar-menu">
+                      <div class="sub-menu">
+                              <li  class="active" >
+                                <a class="sidenav-item-link" href="{{route('all.contact')}}">
+                                  <span class="nav-text">Contact Info</span>
+                                  
+                                </a>
+                              </li>
+                              <li  class="active" >
+                                <a class="sidenav-item-link" href="{{route('show.messages')}}">
+                                  <span class="nav-text">Client Messages</span>
+                                  
+                                </a>
+                              </li>
+                      </div>
+                    </ul>
+                  </li>
+
+                  
 
                   <li  class="has-sub active expand">
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#slider"
@@ -74,7 +101,55 @@
                       <i class="mdi mdi-folder-multiple-outline"></i>
                       <span class="nav-text">Slider</span> 
                     </a>
-                    
+                    <ul  class="collapse show"  id="slider"
+                      data-parent="#sidebar-menu">
+                      <div class="sub-menu">
+                              <li  class="active" >
+                                <a class="sidenav-item-link" href="{{route('all.slider')}}">
+                                  <span class="nav-text">All Sliders</span>
+                                  
+                                </a>
+                              </li>
+                      </div>
+                    </ul>
+                  </li>
+
+                  <li  class="has-sub active expand">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#posts"
+                      aria-expanded="false" aria-controls="posts">
+                      <i class="mdi mdi-folder-multiple-outline"></i>
+                      <span class="nav-text">Posts</span> 
+                    </a>
+                    <ul  class="collapse show"  id="posts"
+                      data-parent="#posts-menu">
+                      <div class="sub-menu">
+                              <li  class="active" >
+                                <a class="sidenav-item-link" href="{{route('add.post')}}">
+                                  <span class="nav-text">All Posts</span>
+                                  
+                                </a>
+                              </li>
+                              <li  class="active" >
+                                <a class="sidenav-item-link" href="{{route('all.slider')}}">
+                                  <span class="nav-text">Articles</span>
+                                  
+                                </a>
+                              </li>
+                              <li  class="active" >
+                                <a class="sidenav-item-link" href="{{route('all.slider')}}">
+                                  <span class="nav-text">HackerRank Posts</span>
+                                  
+                                </a>
+                              </li>
+                              <li  class="active" >
+                                <a class="sidenav-item-link" href="{{route('all.slider')}}">
+                                  <span class="nav-text">Code Snippets</span>
+                                  
+                                </a>
+                              </li>
+                              
+                      </div>
+                    </ul>
                   </li>
                  
                  

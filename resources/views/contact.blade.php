@@ -7,24 +7,25 @@
     <section class="intro-single">
       <div class="container">
         <div class="row">
+          <div class="col-md-12 my-3">
+                      <div class="mb-3">
+                        @if(session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            
+                            <strong>{{session('success')}}</strong> 
+                            <button type="button" class="btn-close" Category-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        @endif
+                        
+                      </div>
+                    </div>
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
-              <h1 class="title-single">Contact US</h1>
+              <h1 class="title-single">Contact Us</h1>
               <span class="color-text-a">Aut voluptas consequatur unde sed omnis ex placeat quis eos. Aut natus officia corrupti qui autem fugit consectetur quo. Et ipsum eveniet laboriosam voluptas beatae possimus qui ducimus. Et voluptatem deleniti. Voluptatum voluptatibus amet. Et esse sed omnis inventore hic culpa.</span>
             </div>
           </div>
-          <div class="col-md-12 col-lg-4">
-            <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <a href="index.html">Home</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                  Contact
-                </li>
-              </ol>
-            </nav>
-          </div>
+          
         </div>
       </div>
     </section><!-- End Intro Single-->
@@ -37,7 +38,8 @@
             <div class="row">
               <div class="col-md-7">
 
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <form action="{{route('contactform')}}" method="post" role="form" >
+                  @csrf
                   <div class="row">
                     <div class="col-md-6 mb-3">
                       <div class="form-group">
@@ -59,13 +61,7 @@
                         <textarea name="message" class="form-control" name="message" cols="45" rows="8" placeholder="Message" required></textarea>
                       </div>
                     </div>
-                    <div class="col-md-12 my-3">
-                      <div class="mb-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
-                      </div>
-                    </div>
+                    
 
                     <div class="col-md-12 text-center">
                       <button type="submit" class="btn btn-a">Send Message</button>
@@ -84,10 +80,10 @@
                     </div>
                     <div class="icon-box-content">
                       <p class="mb-1">Email.
-                        <span class="color-a">contact@example.com</span>
+                        <span class="color-a">{{$contact->email}}</span>
                       </p>
                       <p class="mb-1">Phone.
-                        <span class="color-a">+54 356 945234</span>
+                        <span class="color-a">{{$contact->phone}}</span>
                       </p>
                     </div>
                   </div>
@@ -97,13 +93,14 @@
                     <span class="bi bi-geo-alt"></span>
                   </div>
                   <div class="icon-box-content table-cell">
-                    <div class="icon-box-title">
+                    <div class="icon-box-title" >
                       <h4 class="icon-title">Find us in</h4>
                     </div>
                     <div class="icon-box-content">
                       <p class="mb-1">
-                        Manhattan, Nueva York 10036,
-                        <br> EE. UU.
+                       {{$contact -> city}}
+                        <br> {{$contact -> province}}
+                        <br> {{$contact->country}}
                       </p>
                     </div>
                   </div>

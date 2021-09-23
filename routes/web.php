@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PostController;
 Use App\Models\Category;
 /*
 |--------------------------------------------------------------------------
@@ -22,14 +23,50 @@ Route::get('/', function () {
 
 //Home
 Route::get('/privacypolicy',[HomeController::class,'privacy'])->name('privacypolicy');
-Route::get('/contact',[HomeController::class,'contact']);
+Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 
-//Category
+
+//
+
+
+
+//Admin Category
 Route::get('admin/category/all',[CategoryController::class,'AllCat'])->name('all.category');
 Route::post('admin/category/add',[CategoryController::class,'AddCat'])->name('add.category');
 Route::get('admin/category/edit/{id}',[CategoryController::class,'EditCat']);
 Route::post('admin/category/update/{id}',[CategoryController::class,'UpdateCat']);
 Route::get('admin/category/delete/{id}',[CategoryController::class,'CategoryDelete']);
+
+//Admin Contact
+Route::get('admin/contact/all',[HomeController::class,'AdminContact'])->name('all.contact');
+Route::get('admin/addcontact',[HomeController::class,'AdminAddContact'])->name('add.contact');
+Route::post('admin/storecontact',[HomeController::class,'StoreContact'])->name('store.contact');
+route::get('admin/contact/delete/{id}',[HomeController::class,'DeleteContact']);
+route::get('admin/contact/edit/{id}',[HomeController::class,'EditContact']);
+Route::post('admin/contact/update/{id}',[HomeController::class,'UpdateContact']);
+
+//Admin Contact Messages
+Route::get('admin/contactmessages',[HomeController::class,'getmessages'])->name('show.messages');
+Route::get('admin/contactmessages/delete/{id}',[HomeController::class,'deletemessages']);
+
+//Contact Form  
+Route::post('contactform',[HomeController::class,'ContactForm'])->name('contactform');
+
+
+//Admin Slider Routes
+Route::get('admin/slider/all',[HomeController::class,'HomeSlider'])->name('all.slider');
+Route::get('add/slider/add',[HomeController::class,'addSlider'])->name('add.slider');
+Route::post('store/slider',[HomeController::class,'storeSlider'])->name('store.slider');
+Route::get('admin/slider/delete/{id}',[HomeController::class,'deleteSlider'])->name('delete.slider');
+route::get('admin/slider/edit/{id}',[HomeController::class,'EditeSlider'])->name('edit.slider');
+Route::post('admin/slider/update/{id}',[HomeController::class,'updateSlider']);
+
+
+//Post Routes
+Route::get('admin/posts/add',[PostController::class,'AddPost'])->name('add.post');
+Route::post('admin/post/store',[PostController::class,'StorePost'])->name('store.post');
+
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

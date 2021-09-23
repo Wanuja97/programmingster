@@ -143,7 +143,7 @@
                       <li class="dropdown-header">
                         <img src="assets/img/user/user.png" class="img-circle" alt="User Image" />
                         <div class="d-inline-block">
-                          Abdus Salam <small class="pt-1">abdus@gmail.com</small>
+                          {{Auth::user()->name}}<small class="pt-1">{{Auth::user()->email}}</small>
                         </div>
                       </li>
 
@@ -223,7 +223,7 @@
 <script src="{{asset('backend/assets/js/map.js')}} "></script>
 <script src="{{asset('backend/assets/js/custom.js')}} "></script>
 
-
+@yield('script')
 
 
   </body>
