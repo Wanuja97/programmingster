@@ -32,7 +32,7 @@ $categories = DB::table('categories')->get();
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <select class="form-control" aria-label="Default select example">
+                                    <select class="form-control" aria-label="Default select example" name="cat_id">
                                         <option selected >Select Post Category</option>
                                         @foreach($categories as $cat)
                                         <option value="{{$cat->id}}">{{$cat->category_name}}</option>
@@ -56,7 +56,7 @@ $categories = DB::table('categories')->get();
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="ckeditor form-control" name="wysiwyg-editor"></textarea>
+                                    <textarea class="ckeditor form-control" name="editor"></textarea>
                                 </div>
                                 <br>
                                 <button type="submit" class="btn btn-primary">Add Post</button>
@@ -80,7 +80,7 @@ $categories = DB::table('categories')->get();
     </script>
 
     <script type="text/javascript">
-    CKEDITOR.replace('wysiwyg-editor', {
+    CKEDITOR.replace('editor', {
         filebrowserUploadUrl: "{{route('store.post', ['_token' => csrf_token() ])}}",
         filebrowserUploadMethod: 'form',
     });

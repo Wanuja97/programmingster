@@ -63,6 +63,7 @@ Route::post('admin/slider/update/{id}',[HomeController::class,'updateSlider']);
 
 
 //Post Routes
+Route::get('admin/posts',[PostController::class,'index'])->name('all.post');
 Route::get('admin/posts/add',[PostController::class,'AddPost'])->name('add.post');
 Route::post('admin/post/store',[PostController::class,'StorePost'])->name('store.post');
 

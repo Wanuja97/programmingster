@@ -130,7 +130,7 @@
                                 </a>
                               </li>
                               <li  class="active" >
-                                <a class="sidenav-item-link" href="{{route('all.slider')}}">
+                                <a class="sidenav-item-link" href="{{route('all.post')}}">
                                   <span class="nav-text">Articles</span>
                                   
                                 </a>
