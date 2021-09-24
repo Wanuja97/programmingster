@@ -1,25 +1,88 @@
-@extends('admin.admin_master')
+@php
+$categories = DB::table('categories')->get();
 
+@endphp
+@extends('admin.admin_master')
 @section('admin')
-    <div class="py-12">
+     <div class="py-12">
         <div class="container">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    @foreach($posts as $post)
-                    <div class="card h-100">
-                    <img src="{{asset($post->post_img)}}" class="card-img-top" alt="post_title" style="width:200px;height:200px">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$post->title}}</h5>
-                        <p class="card-text">{!! html_entity_decode($post->content) !!}</p>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Add Post
+                        </div>
+                        @if(session('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            
+                            <strong>{{session('success')}}</strong> 
+                            <button type="button" class="btn-close" Category-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        @endif
+                        <div class="card-body">
+                            <form action="{{ route('store.post')}}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="mb-3">
+
+                                    <label for="inputPostTitle" class="form-label">Post Title</label>
+                                    <input type="text" name="title" class="form-control" id="inputPostTitle" aria-describedby="emailHelp" placeholder="Enter Post Title">
+
+                                    @error('title')
+                                        <span class="text-danger"> {{$message}} </span>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
+                                    <select class="form-control" aria-label="Default select example" name="cat_id">
+                                        <option selected >Select Post Category</option>
+                                        @foreach($categories as $cat)
+                                        <option value="{{$cat->id}}">{{$cat->category_name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputPostDesc" class="form-label">Post Description</label>
+                                    <textarea class="form-control" name ="description" id="inputPostDesc" rows="5" placeholder="Enter Post Description"></textarea>
+                                    @error('description')
+                                        <span class="text-danger"> {{$message}} </span>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="inputPostImage" class="form-label">Post Image</label>
+                                    <input type="file" name="image" class="form-control" id="inputPostImage" aria-describedby="emailHelp" >
+
+                                    @error('image')
+                                        <span class="text-danger"> {{$message}} </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="ckeditor form-control" name="editor"></textarea>
+                                </div>
+                                <br>
+                                <button type="submit" class="btn btn-primary">Add Post</button>
+                            </form>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Published At {{ date('M j, Y', strtotime($post->created_at))}}</small>
-                    </div>
-                    </div>
-                    @endforeach
                 </div>
-  
-            </div>
+                
+            </div><!--row-->
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script src="//cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('.ckeditor').ckeditor();
+    });
+    </script>
+
+    <script type="text/javascript">
+    CKEDITOR.replace('editor', {
+        filebrowserUploadUrl: "{{route('store.post', ['_token' => csrf_token() ])}}",
+        filebrowserUploadMethod: 'form',
+    });
+    </script>
 @endsection

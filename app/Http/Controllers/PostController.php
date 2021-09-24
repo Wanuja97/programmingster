@@ -14,16 +14,47 @@ class PostController extends Controller
     public function __construct(){
         return $this-> middleware('auth');
     }
-    public function index(){
-        $posts = Post::all();
-        return view('admin.posts.index',compact('posts'));
+
+    // ------------------------------------------       Admin panel -------------------------------------------------
+    public function AllArticle(){
+
+        //Joining two tables and retrieving
+        $articles = DB::table('posts')
+            ->join('categories', 'posts.cat_id', '=', 'categories.id')
+            ->select('posts.*')
+            ->where('categories.category_name', '=', 'Articles')
+            ->get();
+        
+        return view('admin.posts.article',compact('articles'));
     }
 
+
+    public function AllHackeRank(){
+        $hackerrank = DB::table('posts')
+            ->join('categories', 'posts.cat_id', '=', 'categories.id')
+            ->select('posts.*')
+            ->where('categories.category_name', '=', 'HackeRank Solutions')
+            ->get();
+        
+        
+        return view('admin.posts.hackerrank',compact('hackerrank'));
+    }
+
+
+    public function AllCodeSnippet(){
+        $codesnippet = DB::table('posts')
+            ->join('categories', 'posts.cat_id', '=', 'categories.id')
+            ->select('posts.*')
+            ->where('categories.category_name', '=', 'Code Chef')
+            ->get();
+        
+        
+        return view('admin.posts.codesnippet',compact('codesnippet'));
+    }
 
     public function AddPost(){
-        return view('admin.posts.addpost');
+        return view('admin.posts.index');
     }
-
 
     public function StorePost(Request $request){
 
@@ -67,5 +98,22 @@ class PostController extends Controller
             $post  =       Post::create($postArray);
 
             return redirect()->back();
+    }
+
+
+    //------------------------------------------------ user view ------------------------------------------------
+
+    public function ViewCategory($id){
+        $posts = DB::table('posts')
+                ->select('posts.*')
+                ->where('posts.cat_id', '=', $id)
+                ->get();
+         
+         return view('layouts.pages.viewcategory',compact('posts'));
+    }
+
+    public function ViewPost($id){
+        $post = Post::find($id);
+        return view('layouts.pages.post',compact('post'));
     }
 }

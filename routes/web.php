@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 Use App\Models\Category;
+Use App\Models\Post;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +19,8 @@ Use App\Models\Category;
 
 Route::get('/', function () {
     $category = Category::all();
-    return view('home',compact('category'));
+    $latestposts = Post::latest('created_at')->paginate(3);
+    return view('home',compact('category','latestposts'));
 })->name('home');
 
 //Home
@@ -26,9 +28,9 @@ Route::get('/privacypolicy',[HomeController::class,'privacy'])->name('privacypol
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 
 
-//
-
-
+//Home category select
+Route::get('category/{id}',[PostController::class,'ViewCategory']);
+Route::get('post/{id}',[PostController::class,'ViewPost']);
 
 //Admin Category
 Route::get('admin/category/all',[CategoryController::class,'AllCat'])->name('all.category');
@@ -63,7 +65,10 @@ Route::post('admin/slider/update/{id}',[HomeController::class,'updateSlider']);
 
 
 //Post Routes
-Route::get('admin/posts',[PostController::class,'index'])->name('all.post');
+// Route::get('admin/posts',[PostController::class,'index'])->name('all.post');
+Route::get('admin/articles',[PostController::class,'AllArticle'])->name('all.article');
+Route::get('admin/hackerrank',[PostController::class,'AllHackeRank'])->name('all.hackerank');
+Route::get('admin/codesnippet',[PostController::class,'AllCodeSnippet'])->name('all.codechef');
 Route::get('admin/posts/add',[PostController::class,'AddPost'])->name('add.post');
 Route::post('admin/post/store',[PostController::class,'StorePost'])->name('store.post');
 

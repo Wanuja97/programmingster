@@ -16,4 +16,10 @@ class Post extends Model
         'post_img',
         'content',
     ];
+    public function category(){
+        return $this->hasMany(Category::class,'id','cat_id');
+    }
+     public function user(){
+        return $this->hasOne(User::class,'id','user_id');
+    }
 }

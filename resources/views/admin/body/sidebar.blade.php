@@ -125,25 +125,25 @@
                       <div class="sub-menu">
                               <li  class="active" >
                                 <a class="sidenav-item-link" href="{{route('add.post')}}">
-                                  <span class="nav-text">All Posts</span>
+                                  <span class="nav-text">Add Post</span>
                                   
                                 </a>
                               </li>
                               <li  class="active" >
-                                <a class="sidenav-item-link" href="{{route('all.post')}}">
+                                <a class="sidenav-item-link" href="{{route('all.article')}}">
                                   <span class="nav-text">Articles</span>
                                   
                                 </a>
                               </li>
                               <li  class="active" >
-                                <a class="sidenav-item-link" href="{{route('all.slider')}}">
+                                <a class="sidenav-item-link" href="{{route('all.hackerank')}}">
                                   <span class="nav-text">HackerRank Posts</span>
                                   
                                 </a>
                               </li>
                               <li  class="active" >
-                                <a class="sidenav-item-link" href="{{route('all.slider')}}">
-                                  <span class="nav-text">Code Snippets</span>
+                                <a class="sidenav-item-link" href="{{route('all.codechef')}}">
+                                  <span class="nav-text">Code Chef</span>
                                   
                                 </a>
                               </li>

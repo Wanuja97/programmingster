@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\ContactInfo;
 use App\Models\ContactForm;
 use App\Models\Slider;
+use App\Models\Post;
 Use Illuminate\Support\carbon;
 
 class HomeController extends Controller
@@ -82,7 +83,7 @@ class HomeController extends Controller
     }
 
     public function getmessages(){
-        $msgs = ContactForm::all();
+        $msgs = ContactForm::latest()->get();
         return view('admin.contact.viewmessages',compact('msgs'));
     }
 

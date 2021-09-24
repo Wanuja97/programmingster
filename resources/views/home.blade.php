@@ -21,20 +21,17 @@
             <div class="carousel-item-b swiper-slide">
               <div class="card-box-a card-shadow">
                 <div class="img-box-a">
-                  <img src="{{$item ->image}}" alt="" class="img-a img-fluid" style="width:500px;height:500px">
+                  <img src="{{$item ->image}}" alt="" class="img-a img-fluid" style="width:500px;height:300px">
                 </div>
                 <div class="card-overlay">
                   <div class="card-overlay-a-content">
                     <div class="card-header-a">
                       <h2 class="card-title-a">
-                        <a href="property-single.html">{{$item -> category_name}}
+                        <a href="{{url('category/'.$item->id)}}">{{$item -> category_name}}
                       </h2>
                     </div>
                     <div class="card-body-a">
-                      <div class="price-box d-flex">
-                        <span class="price-a">rent | $ 12.000</span>
-                      </div>
-                      <a href="#" class="link-a">Click here to view
+                      <a href="{{url('category/'.$item->id)}}" class="link-a">Click here to view
                         <span class="bi bi-chevron-right"></span>
                       </a>
                     </div>
@@ -70,31 +67,32 @@
 
         <div id="news-carousel" class="swiper-container">
           <div class="swiper-wrapper">
-            @for($i=0; $i<4 ; $i++)
+            @foreach($latestposts as $item)
             <div class="carousel-item-c swiper-slide">
               <div class="card-box-b card-shadow news-box">
                 <div class="img-box-b">
-                  <img src="{{asset('frontend/assets/img/property-6.jpg')}}" alt="" class="img-b img-fluid">
+                  <img src="{{asset($item->post_img)}}" alt="" class="img-b img-fluid" style="width:500px;height:300px">
                 </div>
                 <div class="card-overlay">
                   <div class="card-header-b">
                     <div class="card-category-b">
-                      <a href="#" class="category-b">House</a>
+                      <a href="{{url('post/'.$item->id)}}" class="category-b">View More</a>
                     </div>
                     <div class="card-title-b">
                       <h2 class="title-2">
-                        <a href="blog-single.html">House is comming
-                          <br> new</a>
+                        <a href="blog-single.html">
+                          <br> {{$item ->title}}</a>
                       </h2>
+                      <p>{{substr(strip_tags($item ->description . '...'),0,80)}}</p>
                     </div>
                     <div class="card-date">
-                      <span class="date-b">18 Sep. 2017</span>
+                      <span class="date-b">{{Carbon\Carbon::parse($item->created_at)->diffForHumans()}}</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div><!-- End carousel item -->
-            @endfor
+            @endforeach
           </div>
         </div>
 
