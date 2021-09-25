@@ -26,7 +26,7 @@ Route::get('/', function () {
 //Home
 Route::get('/privacypolicy',[HomeController::class,'privacy'])->name('privacypolicy');
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
-
+Route::get('/about',[HomeController::class,'about'])->name('about');
 
 //Home category select
 Route::get('category/{id}',[PostController::class,'ViewCategory']);
@@ -71,8 +71,8 @@ Route::get('admin/hackerrank',[PostController::class,'AllHackeRank'])->name('all
 Route::get('admin/codesnippet',[PostController::class,'AllCodeSnippet'])->name('all.codechef');
 Route::get('admin/posts/add',[PostController::class,'AddPost'])->name('add.post');
 Route::post('admin/post/store',[PostController::class,'StorePost'])->name('store.post');
-
-
+Route::get('admin/post/delete/{id}',[PostController::class,'DeletePost']);
+Route::get('admin/post/edit/{id}',[PostController::class,'EditPost']);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

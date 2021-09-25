@@ -42,8 +42,8 @@
                             @endif
                             
                           
-                                <td><a href="{{url('admin/category/delete',$item->id)}}" class="btn btn-danger" onclick="return confirm('Are you sure to Delete')"> Delete</a></td>
-                                <td><a href="{{url('admin/category/edit',$item->id)}}" class="btn btn-success"> Edit</a></td>
+                                <td><a href="{{url('admin/post/delete',$item->id)}}" class="btn btn-danger" onclick="return confirm('Are you sure to Delete')"> Delete</a></td>
+                                <td><a href="{{url('admin/post/edit',$item->id)}}" class="btn btn-success"> Edit</a></td>
                           
                             
                             </tr>

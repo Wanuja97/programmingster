@@ -1,3 +1,7 @@
+@section('title')
+{{$post->title}}
+@endsection
+
 @extends('layouts.master_home')
 @section('home_content')
     <section class="intro-single">

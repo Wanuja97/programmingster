@@ -116,4 +116,17 @@ class PostController extends Controller
         $post = Post::find($id);
         return view('layouts.pages.post',compact('post'));
     }
+    public function DeletePost($id){
+        $item = Post::find($id);
+        $old_image = $item->post_img;
+        unlink($old_image);
+
+        Post::find($id)->delete();
+        return redirect()->back()->with('success','Post Deleted Successfully');
+    }
+
+    public function EditCat($id){
+        $post = Category::find($id);
+        return view('admin.categories.categoryedit',compact('post'));
+    }
 }

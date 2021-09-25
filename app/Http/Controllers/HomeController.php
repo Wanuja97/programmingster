@@ -19,7 +19,11 @@ class HomeController extends Controller
     public function privacy(){
         return view('privacypolicy');
     }
+    // --------------------------------------- About Page ----------------------------------------------------------
 
+    public function about(){
+        return view('about');
+    }
     // --------------------------------------- Contact Info --------------------------------------------------------
     public function contact(){
         $contact = ContactInfo::latest()->first();
