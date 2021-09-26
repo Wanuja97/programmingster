@@ -121,12 +121,12 @@ Contact Me
                       <div class="socials-footer">
                         <ul class="list-inline">
                           <li class="list-inline-item">
-                            <a href="#" class="link-one">
+                            <a href="https://www.facebook.com/nalaka.ranasinghe.739/" class="link-one" target="_blank">
                               <i class="bi bi-facebook" aria-hidden="true"></i>
                             </a>
                           </li>
                           <li class="list-inline-item">
-                            <a href="#" class="link-one">
+                            <a href="https://www.linkedin.com/in/wanujaranasinghe/" class="link-one" target="_blank">
                               <i class="bi bi-linkedin" aria-hidden="true"></i>
                             </a>
                           </li>

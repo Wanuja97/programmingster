@@ -78,18 +78,20 @@ Programmingster
                 </div>
                 <div class="card-overlay">
                   <div class="card-header-b">
-                    <div class="card-category-b">
-                      <a href="{{url('post/'.$item->id)}}" class="category-b">View More</a>
-                    </div>
+                    
                     <div class="card-title-b">
                       <h2 class="title-2">
-                        <a href="blog-single.html">
+                        <a href="{{url('post/'.$item->id)}}">
                           <br> {{$item ->title}}</a>
                       </h2>
                       <p>{{substr(strip_tags($item ->description . '...'),0,80)}}</p>
                     </div>
+                    <div class="card-category-b">
+                      <a href="{{url('post/'.$item->id)}}" class="category-b">View More</a>
+                    </div><br>
                     <div class="card-date">
                       <span class="date-b">{{Carbon\Carbon::parse($item->created_at)->diffForHumans()}}</span>
+                      
                     </div>
                   </div>
                 </div>

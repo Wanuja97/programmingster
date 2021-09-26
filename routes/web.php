@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PublicController;
 Use App\Models\Category;
 Use App\Models\Post;
 /*
@@ -16,21 +17,25 @@ Use App\Models\Post;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
+Route::group(['middleware' => 'prevent-back-history'],function(){
+    Route::get('/', function () {
     $category = Category::all();
     $latestposts = Post::latest('created_at')->paginate(3);
     return view('home',compact('category','latestposts'));
 })->name('home');
 
 //Home
-Route::get('/privacypolicy',[HomeController::class,'privacy'])->name('privacypolicy');
-Route::get('/contact',[HomeController::class,'contact'])->name('contact');
-Route::get('/about',[HomeController::class,'about'])->name('about');
+Route::get('/privacypolicy',[PublicController::class,'privacy'])->name('privacypolicy');
+Route::get('/contact',[PublicController::class,'contact'])->name('contact');
+Route::get('/about',[PublicController::class,'about'])->name('about');
 
 //Home category select
-Route::get('category/{id}',[PostController::class,'ViewCategory']);
-Route::get('post/{id}',[PostController::class,'ViewPost']);
+Route::get('category/{id}',[PublicController::class,'ViewCategory']);
+Route::get('post/{id}',[PublicController::class,'ViewPost']);
+
+//Admin 
+Route::get('admin/profile',[HomeController::class,'Adminprofile'])->name('admin.profile');
+Route::get('admin/logout',[HomeController::class,'Logout'])->name('admin.logout');
 
 //Admin Category
 Route::get('admin/category/all',[CategoryController::class,'AllCat'])->name('all.category');
@@ -52,7 +57,7 @@ Route::get('admin/contactmessages',[HomeController::class,'getmessages'])->name(
 Route::get('admin/contactmessages/delete/{id}',[HomeController::class,'deletemessages']);
 
 //Contact Form  
-Route::post('contactform',[HomeController::class,'ContactForm'])->name('contactform');
+Route::post('contactform',[PublicController::class,'ContactForm'])->name('contactform');
 
 
 //Admin Slider Routes
@@ -73,8 +78,13 @@ Route::get('admin/posts/add',[PostController::class,'AddPost'])->name('add.post'
 Route::post('admin/post/store',[PostController::class,'StorePost'])->name('store.post');
 Route::get('admin/post/delete/{id}',[PostController::class,'DeletePost']);
 Route::get('admin/post/edit/{id}',[PostController::class,'EditPost']);
+Route::post('admin/post/update/{id}',[PostController::class,'UpdatePost'])->name('update.post');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('admin.index');
 })->name('dashboard');
+ 
+});
+
+

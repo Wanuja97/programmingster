@@ -7,6 +7,7 @@ use App\Models\ContactInfo;
 use App\Models\ContactForm;
 use App\Models\Slider;
 use App\Models\Post;
+use Auth;
 Use Illuminate\Support\carbon;
 
 class HomeController extends Controller
@@ -15,20 +16,16 @@ class HomeController extends Controller
     public function __construct(){
         return $this-> middleware('auth');
     }
-    // --------------------------------------- Privacy Page --------------------------------------------------------
-    public function privacy(){
-        return view('privacypolicy');
+    
+    public function Adminprofile(){
+        return view('profile.show');
     }
-    // --------------------------------------- About Page ----------------------------------------------------------
+    public function Logout(){
+        Auth::logout();
+        return Redirect()->route('login')->with('success','User logout successfully');
+    }
 
-    public function about(){
-        return view('about');
-    }
-    // --------------------------------------- Contact Info --------------------------------------------------------
-    public function contact(){
-        $contact = ContactInfo::latest()->first();
-        return view('contact',compact('contact'));
-    }
+
     public function AdminContact(){
         $contact = ContactInfo::all();
         return view('admin.contact.index',compact('contact'));
@@ -74,17 +71,7 @@ class HomeController extends Controller
 
     }
     
-    public function ContactForm(Request $request){
-        ContactForm::insert([
-            'name' => $request->name,
-            'email' => $request->email,
-            'subject' => $request->subject,
-            'message' => $request->message,
-            'created_at' => Carbon::now(),
-
-        ]);
-       return redirect()->route('contact')->with('success','Your message has been sent. Thank you!');
-    }
+    
 
     public function getmessages(){
         $msgs = ContactForm::latest()->get();

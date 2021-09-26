@@ -81,7 +81,7 @@ class PostController extends Controller
         $image_exte = strtolower($image->getClientOriginalExtension());
         $img_name = $name_gen. "." .$image_exte;
         // upload location
-        $up_location = 'images/posts/';
+        $up_location = 'images/postcover/';
         $last_img = $up_location.$img_name;
         $image->move($up_location,$img_name);
 
@@ -103,19 +103,7 @@ class PostController extends Controller
 
     //------------------------------------------------ user view ------------------------------------------------
 
-    public function ViewCategory($id){
-        $posts = DB::table('posts')
-                ->select('posts.*')
-                ->where('posts.cat_id', '=', $id)
-                ->get();
-         
-         return view('layouts.pages.viewcategory',compact('posts'));
-    }
-
-    public function ViewPost($id){
-        $post = Post::find($id);
-        return view('layouts.pages.post',compact('post'));
-    }
+    
     public function DeletePost($id){
         $item = Post::find($id);
         $old_image = $item->post_img;
@@ -128,5 +116,80 @@ class PostController extends Controller
     public function EditCat($id){
         $post = Category::find($id);
         return view('admin.categories.categoryedit',compact('post'));
+    }
+
+    public function EditPost($id){
+        $post = Post::find($id);
+        return view('admin.posts.editpost',compact('post'));
+    }
+
+    public function UpdatePost(Request $request ,$id){
+        
+
+        if($request->hasFile('upload')) {
+            $originName = $request->file('upload')->getClientOriginalName();
+            $fileName = pathinfo($originName, PATHINFO_FILENAME);
+            $extension = $request->file('upload')->getClientOriginalExtension();
+            $fileName = $fileName.'_'.time().'.'.$extension;
+            $request->file('upload')->move(public_path('images\posts'), $fileName);
+            $CKEditorFuncNum = $request->input('CKEditorFuncNum');
+            $url = asset('images/posts/'.$fileName); 
+            $msg = 'Image successfully uploaded'; 
+            $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
+               
+            @header('Content-type: text/html; charset=utf-8'); 
+            echo $response;
+        }
+        $validatedData = $request->validate([
+        'title' => 'required| max:50',
+        'image' => 'required| mimes:jpg,jpeg,png',
+        'cat_id' => 'required',
+        'content' => 'required'
+         ],
+        [
+            'title.required' => 'Please Input Title',
+            'image.required' => 'Please Insert a Image',
+            'cat_id' => 'Please Select a Category'
+        ]);
+        //getting old image code
+        $item = Post::find($id);
+        $old_image = $item->post_img;
+        //If User changed Image
+         if($request->image){
+            //taking image file
+            $image = $request->file('image');
+            //generating unique if for image
+            $name_gen = hexdec(uniqid());
+            //Creating Extension
+            $image_exte = strtolower($image->getClientOriginalExtension());
+            $img_name = $name_gen. "." .$image_exte;
+            //upload location
+            $up_location = 'images/postcover/';
+            $last_img = $up_location.$img_name;
+            $image->move($up_location,$img_name);
+
+            unlink($old_image);
+            Post::find($id)->update([
+            
+            'post_img' => $last_img,
+            ]);
+         }
+
+
+        $postArray      =   array( 
+            "title"  =>  $request->title,
+            "user_id" => Auth::user()->id,
+            "cat_id" => $request->cat_id,
+             'post_img' => $last_img,
+            "description" => $request->description,
+            "content" => $request->editor
+
+        );
+
+            $post  = Post::where('id',$id)->update($postArray);
+
+        // $categories = Category::all();
+          return redirect()->back()->with('success','Post Updated Successfully');
+        // return redirect()->back()->with('success','Category Updated Successfully');
     }
 }

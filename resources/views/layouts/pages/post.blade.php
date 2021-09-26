@@ -34,7 +34,7 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="news-img-box">
-              <img src="{{asset($post->post_img)}}" alt="" class="img-fluid">
+              <img src="{{asset($post->post_img)}}" alt="" class="img-b img-fluid" style="text-align:center;">
             </div>
           </div>
           <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
