@@ -97,7 +97,7 @@ class PostController extends Controller
 
             $post  =       Post::create($postArray);
 
-            return redirect()->back();
+            return redirect()->back()->with('success','Post Added Successfully');
     }
 
 
@@ -140,17 +140,7 @@ class PostController extends Controller
             @header('Content-type: text/html; charset=utf-8'); 
             echo $response;
         }
-        $validatedData = $request->validate([
-        'title' => 'required| max:50',
-        'image' => 'required| mimes:jpg,jpeg,png',
-        'cat_id' => 'required',
-        'content' => 'required'
-         ],
-        [
-            'title.required' => 'Please Input Title',
-            'image.required' => 'Please Insert a Image',
-            'cat_id' => 'Please Select a Category'
-        ]);
+       
         //getting old image code
         $item = Post::find($id);
         $old_image = $item->post_img;

@@ -2,6 +2,8 @@
 About
 @endsection
 @extends('layouts.master_home')
+
+
 @section('home_content')
     <section class="intro-single">
       <div class="container">

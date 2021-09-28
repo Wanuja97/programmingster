@@ -23,6 +23,7 @@ $categories = DB::table('categories')->get();
                             <form action="{{ url('admin/post/update/'.$post->id)}}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                  <input type="hidden" name="old_image" value="{{$post->post_img}}">
+                                 <input type="hidden" name="old_content" value="{{$post->content}}">
                                 <div class="mb-3">
 
                                     <label for="inputPostTitle" class="form-label">Post Title</label>

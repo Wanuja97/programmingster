@@ -10,20 +10,8 @@
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
               <h1 class="title-single">{{$post->title}}</h1>
-              <span class="color-text-a">News Single.</span>
+              
             </div>
-          </div>
-          <div class="col-md-12 col-lg-4">
-            <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <a href="#">Home</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                  Book Cover Deisgn
-                </li>
-              </ol>
-            </nav>
           </div>
         </div>
       </div>
@@ -33,8 +21,8 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <div class="news-img-box">
-              <img src="{{asset($post->post_img)}}" alt="" class="img-b img-fluid" style="text-align:center;">
+            <div class="news-img-box d-flex justify-content-center" >
+              <img src="{{asset($post->post_img)}}" alt="" class="img-b img-fluid" >
             </div>
           </div>
           <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
@@ -93,7 +81,7 @@
               <ul class="list-comments">
                 <li>
                   <div class="comment-avatar">
-                    <img src="assets/img/author-2.jpg" alt="">
+                    <img src="{{asset('frontend/assets/img/author-2.jpg')}}" alt="">
                   </div>
                   <div class="comment-details">
                     <h4 class="comment-author">Emma Stone</h4>
@@ -108,7 +96,7 @@
                 </li>
                 <li class="comment-children">
                   <div class="comment-avatar">
-                    <img src="assets/img/author-1.jpg" alt="">
+                    <img src="{{asset('frontend/assets/img/author-1.jpg')}}" alt="">
                   </div>
                   <div class="comment-details">
                     <h4 class="comment-author">Oliver Colmenares</h4>
@@ -123,7 +111,7 @@
                 </li>
                 <li>
                   <div class="comment-avatar">
-                    <img src="assets/img/author-2.jpg" alt="">
+                    <img src="{{asset('frontend/assets/img/author-2.jpg')}}" alt="">
                   </div>
                   <div class="comment-details">
                     <h4 class="comment-author">Emma Stone</h4>
@@ -154,12 +142,6 @@
                     <div class="form-group">
                       <label for="inputEmail1">Enter email</label>
                       <input type="email" class="form-control form-control-lg form-control-a" id="inputEmail1" placeholder="Email *" required>
-                    </div>
-                  </div>
-                  <div class="col-md-12 mb-3">
-                    <div class="form-group">
-                      <label for="inputUrl">Enter website</label>
-                      <input type="url" class="form-control form-control-lg form-control-a" id="inputUrl" placeholder="Website">
                     </div>
                   </div>
                   <div class="col-md-12 mb-3">

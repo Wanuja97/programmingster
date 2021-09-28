@@ -4,7 +4,7 @@ Privacy Policy
 @extends('layouts.master_home')
 
 @section('home_content')
-<section class="intro-single">
+<section class="intro-single ">
       <div class="container">
         <div class="row">
           <div class="col-md-12 my-3">

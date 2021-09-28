@@ -4,6 +4,7 @@ Contact Me
 
 @extends('layouts.master_home')
 
+
 @section('home_content')
     <main id="main">
 
