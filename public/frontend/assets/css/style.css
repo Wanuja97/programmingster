@@ -1,13 +1,4 @@
-/**
-* Template Name: EstateAgency - v4.3.0
-* Template URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
 .justify-content-right{
   justify-content: right;
 }
@@ -1105,12 +1096,12 @@ a:hover {
 
 /*------/ Intro Single /------*/
 .intro-single {
-  padding: 8rem 0 0rem 3rem;
+  padding: 6rem 0 0rem 0rem;
 }
 
 @media (max-width: 767px) {
   .intro-single {
-    padding-top: 9rem;
+    padding-top: 4rem;
   }
 }
 

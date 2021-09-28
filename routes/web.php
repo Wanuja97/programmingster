@@ -58,7 +58,8 @@ Route::get('admin/contactmessages/delete/{id}',[HomeController::class,'deletemes
 
 //Contact Form  
 Route::post('contactform',[PublicController::class,'ContactForm'])->name('contactform');
-
+//Search Items
+Route::post('/search/results',[PublicController::class,'SearchResults'])->name('searchresults');
 
 //Admin Slider Routes
 Route::get('admin/slider/all',[HomeController::class,'HomeSlider'])->name('all.slider');

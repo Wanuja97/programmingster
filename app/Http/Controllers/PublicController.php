@@ -59,4 +59,10 @@ class PublicController extends Controller
         ]);
        return redirect()->route('contact')->with('success','Your message has been sent. Thank you!');
     }
+
+    public function SearchResults(Request $request){
+        $keyword = $request->keyword;
+        $posts = Post::where('title','LIKE', '%'.$keyword.'%')->latest()->get();
+        return view('layouts.pages.searchresults',compact('posts'));
+    }
 }

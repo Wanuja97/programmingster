@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-12">
           <nav class="nav-footer">
-            <img src="images/cover.png" alt="logo" class="img-b img-fluid">
+            <img src="{{asset('images/cover.png')}}" alt="logo" class="img-b img-fluid">
             <ul class="list-inline">
               <li class="list-inline-item">
                 <a href="{{route('home')}}">Home</a>

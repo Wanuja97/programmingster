@@ -7,12 +7,13 @@
     </div>
     <span class="close-box-collapse right-boxed bi bi-x"></span>
     <div class="box-collapse-wrap form">
-      <form class="form-a">
+      <form class="form-a" action="{{route('searchresults')}}" method="POST">
+        @csrf 
         <div class="row">
           <div class="col-md-12 mb-2">
             <div class="form-group">
               <label class="pb-2" for="Type">Keyword</label>
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
+              <input type="text" name="keyword"class="form-control form-control-lg form-control-a" placeholder="Keyword" required>
             </div>
           </div>
           
