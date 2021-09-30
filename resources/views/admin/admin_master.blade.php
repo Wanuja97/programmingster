@@ -26,7 +26,7 @@
   
 
   <!-- FAVICON-->
-  <link href="{{asset('backend/assets/img/favicon.png')}}" rel="shortcut icon" />
+   <link rel="icon" href="{{asset('images/icon.png')}}" type = "image/x-icon">
 
   <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -36,7 +36,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-  <script src="{{asset('backend')}} assets/plugins/nprogress/nprogress.js"></script>
+  <script src="{{asset('backend/assets/plugins/nprogress/nprogress.js')}} "></script>
 </head>
 
 

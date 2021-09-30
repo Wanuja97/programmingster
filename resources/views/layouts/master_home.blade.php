@@ -39,6 +39,7 @@
   <main id="main">
 
     @yield('home_content')
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="bi bi-arrow-up-short"></i></a>
 
   </main><!-- End #main -->
 

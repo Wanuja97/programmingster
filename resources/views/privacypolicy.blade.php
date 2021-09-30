@@ -7,11 +7,24 @@ Privacy Policy
 <section class="intro-single ">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 my-3">
+          
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
               <h1 class="title-single">Privacy Policy</h1>
             </div>
+            
+          </div>
+          <div class="col-md-12 col-lg-4">
+            <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                  <a href="/">Home</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                  Privacy policy
+                </li>
+              </ol>
+            </nav>
           </div>
         </div>
       </div>
@@ -62,9 +75,6 @@ Privacy Policy
 
 <p>For more general information on cookies, please read <a href="https://www.generateprivacypolicy.com/#cookies">"Cookies" article from the Privacy Policy Generator</a>.</p>
 
-<h2>Google DoubleClick DART Cookie</h2>
-
-<p>Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.website.com and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL – <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></p>
 
 
 <h2>Advertising Partners Privacy Policies</h2>

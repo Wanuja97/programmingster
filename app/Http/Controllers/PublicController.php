@@ -61,8 +61,20 @@ class PublicController extends Controller
     }
 
     public function SearchResults(Request $request){
-        $keyword = $request->keyword;
-        $posts = Post::where('title','LIKE', '%'.$keyword.'%')->latest()->get();
+        $searchTerm =$request->keyword;
+        $reservedSymbols = ['-', '+', '<', '>', '@', '(', ')', '~'];
+        $searchTerm = str_replace($reservedSymbols, ' ', $searchTerm);
+
+        $searchValues = preg_split('/\s+/', $searchTerm, -1, PREG_SPLIT_NO_EMPTY);
+
+        $posts = Post::where(function ($q) use ($searchValues) {
+            foreach ($searchValues as $value) {
+            $q->orWhere('title', 'like', "%{$value}%");
+           
+            }
+        })->get();
+        // $keyword = $request->keyword;
+        // $posts = Post::where('title','LIKE', '%'.$keyword.'%')->latest()->get();
         return view('layouts.pages.searchresults',compact('posts'));
     }
 }

@@ -16,7 +16,7 @@
         </div>
       </div>
     </section><!-- End Intro Single-->
-
+    <br>
     <section class="news-single nav-arrow-b">
       <div class="container">
         <div class="row">
@@ -47,29 +47,13 @@
             </div>
             <div class="post-footer">
               <div class="post-share">
-                <span>Share: </span>
-                <ul class="list-inline socials">
-                  <li class="list-inline-item">
-                    <a href="#">
-                      <i class="bi bi-facebook" aria-hidden="true"></i>
-                    </a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#">
-                      <i class="bi bi-twitter" aria-hidden="true"></i>
-                    </a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#">
-                      <i class="bi bi-instagram" aria-hidden="true"></i>
-                    </a>
-                  </li>
-                  <li class="list-inline-item">
-                    <a href="#">
-                      <i class="bi bi-linkedin" aria-hidden="true"></i>
-                    </a>
-                  </li>
-                </ul>
+                <span>Share: </span><br>
+                
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="addthis_inline_share_toolbox"
+              </div>
+            
+               
               </div>
             </div>
           </div>
@@ -160,4 +144,5 @@
         </div>
       </div>
     </section><!-- End Blog Single-->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6154429420af3516"></script>
 @endsection
