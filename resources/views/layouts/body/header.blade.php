@@ -23,7 +23,7 @@
         </div>
       </form>
     </div>
-  </div><!-- End Property Search Section -->>
+  </div><!-- End Property Search Section -->
 <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
     <div class="container">
       <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,8 @@
         <span></span>
         <span></span>
       </button>
-      <img src="{{asset('images/navbarlogo1.png')}}" alt="logo" class="img-b img-fluid">
+      <!-- <img src="{{asset('images/navbarlogo1.png')}}" alt="logo" class="img-b img-fluid"> -->
+      <a class="navbar-brand text-brand pro"><span class="color-b pro">Programmingster</span></a>
 
       <div class="navbar-collapse collapse justify-content-right" id="navbarDefault">
         <ul class="navbar-nav">

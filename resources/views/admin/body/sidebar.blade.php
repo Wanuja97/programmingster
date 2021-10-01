@@ -36,14 +36,6 @@
                     </a>
                    
                   </li>
-                  <li  class="has-sub active">
-                    <a class="sidenav-item-link" href="{{route('all.slider')}}" 
-                      >
-                      <i class="mdi mdi-view-dashboard-outline"></i>
-                      <span class="nav-text">Sliders</span>
-                    </a>
-                   
-                  </li>
                   
               </ul>
 

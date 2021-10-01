@@ -3,18 +3,15 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <nav class="nav-footer">
-            <img src="{{asset('images/cover.png')}}" alt="logo" class="img-b img-fluid">
+          <nav class="nav-footer ">
+            <img src="{{asset('images/graycover.png')}}" alt="logo" class="img-b img-fluid">
             <ul class="list-inline">
-              <li class="list-inline-item">
+              <li class="list-inline-item ">
                 <a href="{{route('home')}}">Home</a>
               </li>
               <li class="list-inline-item">
                 <a href="{{url('/about')}}">About</a>
               </li>
-              <!-- <li class="list-inline-item">
-                <a href="#"></a>
-              </li> -->
               <li class="list-inline-item">
                 <a href="{{url('/contact')}}">contact</a>
               </li>
@@ -38,9 +35,9 @@
             </ul>
           </div>
           <div class="copyright-footer">
-            <p class="copyright color-text-a">
+            <p class="copyright footer-color">
               &copy; Copyright
-              <span class="color-a">Programmingster</span> All Rights Reserved.
+              <span class="footer-color">Programmingster</span> All Rights Reserved.
             </p>
           </div>
          
