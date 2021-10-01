@@ -9,12 +9,12 @@ Programmingster
 
      <!-- ======= Categories Section ======= -->
      <section id="hero">
-    <div class="hero-container">
-      <h3>Welcome to <strong>Programmingster</strong></h3>
-      <h1>We're Creative Agency</h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
-      <a href="#category" class="btn-get-started scrollto btn-border">Get Started</a>
-    </div>
+      <div class="hero-container">
+        <h3>Welcome to <strong>Programmingster</strong></h3>
+        <h1>We're Creative Agency</h1>
+        <h2>We are team of talented designers making websites with Bootstrap</h2>
+        <a href="#category" class="btn-get-started scrollto btn-border">Get Started</a>
+      </div>
   </section><!-- End Hero -->
      
   <section id="category">
@@ -31,7 +31,7 @@ Programmingster
             <div class="about-col">
               <div class="img">
                 <img src="{{$item ->image}}" alt="" class="img-fluid" style="width:400px;height:200px">
-                <div class="icon"><i class="bi bi-bar-chart"></i></div>
+                <div class="icon"><i class="bi bi-file-earmark-code-fill"></i></div>
               </div>
               <h2 class="title"><a href="#">{{$item -> category_name}}</a></h2>
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad doloribus unde, odio sed est doloremque, voluptatibus,.</p>
@@ -43,11 +43,11 @@ Programmingster
         </div>
 
       </div>
-    </section><!-- End About Us Section -->
+  </section><!-- End About Us Section -->
 
 
     <!-- ======= Latest Articles Section ======= -->
-    <section class="section-news section-t8">
+    <section class="section-news section-t8" id="latest">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
