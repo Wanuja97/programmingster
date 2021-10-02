@@ -47,26 +47,20 @@ Programmingster
 
 
     <!-- ======= Latest Articles Section ======= -->
-    <section class="section-news section-t8" id="latest">
+    <section class="section-news section-t8" id="latest" data-aos="fade-up">
       <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="title-wrap d-flex justify-content-between">
-              <div class="title-box">
-                <h2 class="title-a">Latest Articles</h2>
-              </div>
-              
-            </div>
-          </div>
-        </div>
-
+        <header class="section-header">
+          <h3>Latest Articles</h3>
+        </header>
+        
+        
          <div id="property-carousel" class="swiper-container">
           <div class="swiper-wrapper">
             @foreach($latestposts as $item)
             <div class="carousel-item-c swiper-slide">
               <div class="card-box-b card-shadow news-box">
                 <div class="img-box-b">
-                  <img src="{{asset($item->post_img)}}" alt="" class="img-b img-fluid" style="height:100%">
+                  <img src="{{asset($item->post_img)}}" alt="" class="img-b img-fluid" >
                 </div>
                 <div class="card-overlay">
                   <div class="card-header-b">
@@ -88,12 +82,12 @@ Programmingster
                   </div>
                 </div>
               </div>
-            </div><!-- End carousel item -->
+            </div>
             @endforeach
           </div>
         </div>
-          <div class="news-carousel-pagination carousel-pagination"></div>
-        <!-- <div class="news-carousel-pagination carousel-pagination"></div> -->
+          <div class="news-carousel-pagination carousel-pagination"></div> -->
+        <!-- <div class="news-carousel-pagination carousel-pagination"></div>
       </div>
     </section><!-- End Latest Articles Section -->
 

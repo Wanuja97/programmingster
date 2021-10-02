@@ -34,7 +34,7 @@ About
             
           <div class="col-md-12 section-t8 position-relative">
             <div class="row">
-              <div class="col-md-6 col-lg-5">
+              <div class="col-md-6 col-lg-5" >
                 <img src="{{asset('images/author.jpg')}}" alt="" class="img-fluid" style="-webkit-box-shadow: -15px -10px 19px -5px rgba(98,100,110,0.75);
 -moz-box-shadow: -15px -10px 19px -5px rgba(98,100,110,0.75);
 box-shadow: -15px -10px 19px -5px rgba(98,100,110,0.75);" >
@@ -44,7 +44,7 @@ box-shadow: -15px -10px 19px -5px rgba(98,100,110,0.75);" >
                   <span>About Author</span>
                 </div>
               </div>
-              <div class="col-md-6 col-lg-5 section-md-t3">
+              <div class="col-md-6 col-lg-5 section-md-t3" >
                 <div class="title-box-d">
                   <h3 class="title-d">
                     Nimash Wanuja

@@ -30,7 +30,7 @@ Privacy Policy
       </div>
     </section><!-- End Intro Single-->
     <section class="section-property section-t8">
-      <div class="container">
+      <div class="container" >
         <div class="row">
           <div class="col-md-12">
             <h1>Privacy Policy for programmingster</h1>

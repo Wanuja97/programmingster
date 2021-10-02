@@ -2418,5 +2418,16 @@ section {
   margin-bottom: 0;
   padding: 0 20px 20px 20px;
 }
-
+#category .card-date  {
+  font-size: 14px;
+  line-height: 24px;
+  color: #333;
+  margin-bottom: 0;
+  padding: 0 20px 20px 20px;
+}
+.img-res{
+  background-position: center ;
+  background-size: cover ;
+  background-repeat: no-repeat;
+}
 
