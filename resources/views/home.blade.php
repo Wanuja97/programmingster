@@ -11,8 +11,8 @@ Programmingster
      <section id="hero">
       <div class="hero-container">
         <h3>Welcome to <strong>Programmingster</strong></h3>
-        <h1>We're Creative Agency</h1>
-        <h2>We are team of talented designers making websites with Bootstrap</h2>
+        <h1>Sample h1 title goes here</h1>
+        <h2>Sample h2 Description goes here</h2>
         <a href="#category" class="btn-get-started scrollto btn-border">Get Started</a>
       </div>
   </section><!-- End Hero -->
@@ -86,7 +86,7 @@ Programmingster
             @endforeach
           </div>
         </div>
-          <div class="news-carousel-pagination carousel-pagination"></div> -->
+          <div class="news-carousel-pagination carousel-pagination"></div> 
         <!-- <div class="news-carousel-pagination carousel-pagination"></div>
       </div>
     </section><!-- End Latest Articles Section -->
