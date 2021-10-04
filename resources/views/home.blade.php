@@ -87,8 +87,8 @@ Programmingster
           </div>
         </div>
           <div class="news-carousel-pagination carousel-pagination"></div> 
-        <!-- <div class="news-carousel-pagination carousel-pagination"></div>
+        <!-- <div class="news-carousel-pagination carousel-pagination"></div>-->
       </div>
-    </section><!-- End Latest Articles Section -->
+    </section>
 
 @endsection

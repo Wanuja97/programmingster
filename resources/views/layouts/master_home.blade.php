@@ -10,8 +10,14 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#267cde">
+  <meta name="msapplication-TileColor" content="#267cde">
+  <meta name="theme-color" content="#ffffff">
   
-  <link rel="icon" href="{{asset('images/icon.png')}}" type = "image/x-icon">
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
