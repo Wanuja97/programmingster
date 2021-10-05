@@ -34,7 +34,21 @@ Posts
       <div class="container" >
         <div class="row about-cols">
           @foreach($posts as $post)
-          <div class="col-md-4" >
+           <div class="col-lg-4 col-sm-6 mb-4">
+              <article class="card shadow">
+                <img class="rounded card-img-top img-fluid" src="{{asset($post->post_img)}}" alt="post-thumb">
+                <div class="card-body">
+                  <h4 class="card-title"><a class="text-dark" href="blog-single.html">{{$post -> title}}</a>
+                  </h4>
+                  <p class="cars-text">{{substr(strip_tags($post ->description . '...'),0,80)}}</p>
+                  <div class="card-date">
+                        <span class="date-b">{{Carbon\Carbon::parse($post->created_at)->diffForHumans()}}</span>
+                  </div>
+                  <a href="{{url('post/'.$post->id)}}" class="btn btn-xs btn-primary">Read More</a>
+                </div>
+              </article>
+            </div>
+          <!-- <div class="col-md-4" >
              <a href="{{url('post/'.$post->id)}}">
             <div class="about-col" >
               <div class="img">
@@ -51,7 +65,7 @@ Posts
             </div>
             
             </a>
-          </div>
+          </div> -->
           
             @endforeach
            

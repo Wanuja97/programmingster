@@ -52,42 +52,25 @@ Programmingster
         <header class="section-header">
           <h3>Latest Articles</h3>
         </header>
-        
-        
-         <div id="property-carousel" class="swiper-container">
-          <div class="swiper-wrapper">
-            @foreach($latestposts as $item)
-            <div class="carousel-item-c swiper-slide">
-              <div class="card-box-b card-shadow news-box">
-                <div class="img-box-b">
-                  <img src="{{asset($item->post_img)}}" alt="" class="img-b img-fluid" >
-                </div>
-                <div class="card-overlay">
-                  <div class="card-header-b">
-                    
-                    <div class="card-title-b">
-                      <h2 class="title-2">
-                        <a href="{{url('post/'.$item->id)}}">
-                          <br> {{$item ->title}}</a>
-                      </h2>
-                      <p>{{substr(strip_tags($item ->description . '...'),0,80)}}</p>
-                    </div>
-                    <div class="card-category-b">
-                      <a href="{{url('post/'.$item->id)}}" class="category-b">View More</a>
-                    </div><br>
-                    <div class="card-date">
-                      <span class="date-b">{{Carbon\Carbon::parse($item->created_at)->diffForHumans()}}</span>
-                      
-                    </div>
+        <div class="row about-cols">
+        @foreach($latestposts as $item)
+        <div class="col-lg-4 col-sm-6 mb-4">
+              <article class="card shadow">
+                <img class="rounded card-img-top img-fluid" src="{{asset($item->post_img)}}" alt="post-thumb">
+                <div class="card-body">
+                  <h4 class="card-title"><a class="text-dark" href="blog-single.html">{{$item -> title}}</a>
+                  </h4>
+                  <p class="cars-text">{{substr(strip_tags($item ->description . '...'),0,40)}}</p>
+                  <div class="card-date">
+                        <span class="date-b">{{Carbon\Carbon::parse($item->created_at)->diffForHumans()}}</span>
                   </div>
+                  <a href="{{url('post/'.$item->id)}}" class="btn btn-xs btn-primary">Read More</a>
                 </div>
-              </div>
+              </article>
             </div>
             @endforeach
-          </div>
-        </div>
-          <div class="news-carousel-pagination carousel-pagination"></div> 
-        <!-- <div class="news-carousel-pagination carousel-pagination"></div>-->
+            </div>
+         
       </div>
     </section>
 
