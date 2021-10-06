@@ -58,7 +58,7 @@ Programmingster
               <article class="card shadow">
                 <img class="rounded card-img-top img-fluid" src="{{asset($item->post_img)}}" alt="post-thumb">
                 <div class="card-body">
-                  <h4 class="card-title"><a class="text-dark" href="blog-single.html">{{$item -> title}}</a>
+                  <h4 class="card-title"><a class="text-dark" href="{{url('post/'.$item->id)}}">{{$item -> title}}</a>
                   </h4>
                   <p class="cars-text">{{substr(strip_tags($item ->description . '...'),0,40)}}</p>
                   <div class="card-date">

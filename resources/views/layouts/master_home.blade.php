@@ -1,13 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="author" content="Wanuja Ranasinghe(wanuja18@gmail.com)">
   <title>@yield('title','programmingster')</title>
+  <link rel="canonical" href="https://www.programmingster.com/">
+  
   <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta name="Keywords" content="HTML, Python, SQL, JavaScript, How to, PHP, Java, Bootstrap, CSS, MySQL, Software Engineering methods, React, Angular, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Flutter, Learning, Lessons, Source code, Demos, Tips">
+  <meta name="robots" content="index, follow">
+  <!-- Social Media Sharing Tags -->
+  <!--  Essential META Tags -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Programmingster">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.seoptimer.com/favicon-32x32.png">
+    <meta property="og:url" content="{{ request()->fullUrl() }}">
+    <meta name="twitter:card" content="summary_large_image">
+
+
+    <!--  Non-Essential, But Recommended -->
+
+    <meta property="og:site_name" content="programminster">
+    <meta name="twitter:image:alt" content="Alt text for image">
+
+
+     <!-- Non-Essential, But Required for Analytics
+
+    <meta property="fb:app_id" content="your_app_id" />
+    <meta name="twitter:site" content="@website-username"> -->
+
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -48,7 +73,15 @@
 
   <!-- Template Main CSS File -->
   <link href="{{asset('frontend2/assets/css/style.css')}}" rel="stylesheet">
-  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JBK9LFHH8S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JBK9LFHH8S');
+  </script>
 </head>
 
 <body>
