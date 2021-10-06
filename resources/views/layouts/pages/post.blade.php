@@ -32,10 +32,10 @@
                   <strong>Author: </strong>
                   <span class="color-text-a">{{$post->user->name}}</span>
                 </li>
-                <li class="list-inline-item mr-2">
+                <!-- <li class="list-inline-item mr-2">
                   <strong>Category: </strong>
                   <span class="color-text-a"></span>
-                </li>
+                </li> -->
                 <li class="list-inline-item">
                   <strong>Date: </strong>
                   <span class="color-text-a">{{ date('M j, Y', strtotime($post->created_at))}}</span>

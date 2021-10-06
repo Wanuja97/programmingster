@@ -10,7 +10,7 @@ Posts
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
               <h1 class="title-single">Our Amazing Posts</h1>
-              <span class="color-text-a"> News</span>
+              <span class="color-text-a"></span>
             </div>
           </div>
           <div class="col-md-12 col-lg-4">
@@ -20,7 +20,7 @@ Posts
                   <a href="index.html">Home</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                  News Posts
+                  Posts
                 </li>
               </ol>
             </nav>

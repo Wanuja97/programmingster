@@ -14,12 +14,12 @@
   <!-- Social Media Sharing Tags -->
   <!--  Essential META Tags -->
     <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="Programmingster">
-    <meta property="og:description" content="">
+    <meta property="og:title" content="Page title">
+    <meta property="og:description" content="Test description">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.seoptimer.com/favicon-32x32.png">
+    <meta property="og:image" content="favicon-400x400.png">
     <meta property="og:url" content="{{ request()->fullUrl() }}">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="favicon-400x400.png">
 
 
     <!--  Non-Essential, But Recommended -->

@@ -68,8 +68,8 @@ box-shadow: -15px -10px 19px -5px rgba(98,100,110,0.75);" >
                   <span class="color-text-a"> wanuja18@gmail.com</span>
                 </p>                                                                                                  <ul class="list-inline">
                       <li class="list-inline-item">
-                        <a href="https://www.facebook.com/nalaka.ranasinghe.739/" class="link-one">
-                          <i class="bi bi-facebook" target="_blank" aria-hidden="true"></i>
+                        <a href="https://www.facebook.com/nalaka.ranasinghe.739/" class="link-one" target="_blank">
+                          <i class="bi bi-facebook"  aria-hidden="true"></i>
                         </a>
                       </li>
                       <li class="list-inline-item">

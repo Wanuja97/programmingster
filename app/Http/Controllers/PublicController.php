@@ -72,7 +72,7 @@ class PublicController extends Controller
             $q->orWhere('title', 'like', "%{$value}%");
            
             }
-        })->get();
+        })->latest()->get();
         // $keyword = $request->keyword;
         // $posts = Post::where('title','LIKE', '%'.$keyword.'%')->latest()->get();
         return view('layouts.pages.searchresults',compact('posts'));

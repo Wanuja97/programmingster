@@ -10,7 +10,7 @@ Search Results
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
               <h1 class="title-single">Our Amazing Posts</h1>
-              <span class="color-text-a">Grid News</span>
+              <span class="color-text-a">Search Results</span>
             </div>
           </div>
           <div class="col-md-12 col-lg-4">
@@ -33,40 +33,26 @@ Search Results
     <section class="news-grid grid">
       <div class="container">
         <div class="row">
-            @if($posts)
+           
             @foreach($posts as $post)
-          <div class="col-md-4">
-            <div class="card-box-b card-shadow news-box">
-              <div class="img-box-b">
-                <img src="{{asset($post->post_img)}}" alt="" class="img-b img-fluid">
-              </div>
-              <div class="card-overlay">
-                <div class="card-header-b">
-                  <div class="card-category-b">
-                    <a href="{{url('post/'.$post->id)}}" class="category-b">View More</a>
-                  </div>
-                  <div class="card-title-b">
-                    <h2 class="title-2">
-                      <a href="blog-single.html">
-                        <br>{{$post -> title}}</a>
-                    </h2>
-                  </div>
+          <div class="col-lg-4 col-sm-6 mb-4">
+              <article class="card shadow">
+                <img class="rounded card-img-top img-fluid" src="{{asset($post->post_img)}}" alt="post-thumb">
+                <div class="card-body">
+                  <h4 class="card-title"><a class="text-dark" href="blog-single.html">{{$post -> title}}</a>
+                  </h4>
+                  <p class="cars-text">{{substr(strip_tags($post ->description . '...'),0,80)}}</p>
                   <div class="card-date">
-                    <span class="date-b">{{Carbon\Carbon::parse($post->created_at)->diffForHumans()}}</span>
+                        <span class="date-b">{{Carbon\Carbon::parse($post->created_at)->diffForHumans()}}</span>
                   </div>
+                  <a href="{{url('post/'.$post->id)}}" class="btn btn-xs btn-primary">Read More</a>
                 </div>
-              </div>
+              </article>
             </div>
-          </div>
             @endforeach
-            @else
-          <div>
-              <p>  No Results Found</p>
-          </div>
-            @endif
           </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-sm-12">
             <nav class="pagination-a">
               <ul class="pagination justify-content-end">
@@ -92,7 +78,7 @@ Search Results
               </ul>
             </nav>
           </div>
-        </div>
+        </div> -->
       </div>
     </section><!-- End Blog Grid-->
 @endsection
