@@ -2,6 +2,11 @@
 {{$post->title}}
 @endsection
 
+@section('meta_keywords', $post->keywords)
+@section('meta_description', $post->description)
+
+
+
 @extends('layouts.master_home')
 @section('home_content')
     <section class="intro-single">
@@ -30,7 +35,7 @@
               <ul class="list-inline text-center color-a">
                 <li class="list-inline-item mr-2">
                   <strong>Author: </strong>
-                  <span class="color-text-a">{{$post->user->name}}</span>
+                  <span class="color-text-a">Wanuja Ranasinghe</span>
                 </li>
                 <!-- <li class="list-inline-item mr-2">
                   <strong>Category: </strong>

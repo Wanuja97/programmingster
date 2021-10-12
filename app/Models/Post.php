@@ -15,6 +15,7 @@ class Post extends Model
         'description',
         'post_img',
         'content',
+        'slug',
     ];
     public function category(){
         return $this->hasMany(Category::class,'id','cat_id');

@@ -7,12 +7,12 @@ $articles = DB::table('posts')
 $hackerrank = DB::table('posts')
             ->join('categories', 'posts.cat_id', '=', 'categories.id')
             ->select('posts.*')
-            ->where('categories.category_name', '=', 'HackeRank Solutions')
+            ->where('categories.category_name', '=', 'Hackground ')
             ->get()->count();
 $codesnippet = DB::table('posts')
             ->join('categories', 'posts.cat_id', '=', 'categories.id')
             ->select('posts.*')
-            ->where('categories.category_name', '=', 'Code Chef')
+            ->where('categories.category_name', '=', 'Codewall')
             ->get()->count();
 
 @endphp
@@ -36,7 +36,7 @@ $codesnippet = DB::table('posts')
                         <a href="{{route('all.hackerank')}}">
                           <div class="card-body">
                           <h2 class="mb-1">{{$hackerrank }}</h2>
-                          <p>HackerRank Solutions</p>
+                          <p>Hackground</p>
                           <div class="chartjs-wrapper">
                             <canvas id="area-chart"></canvas>
                           </div>
@@ -49,7 +49,7 @@ $codesnippet = DB::table('posts')
                         <a href="{{route('all.codechef')}}">
                           <div class="card-body">
                           <h2 class="mb-1">{{$codesnippet}}</h2>
-                          <p>Code Snipets</p>
+                          <p>Codewall</p>
                           <div class="chartjs-wrapper">
                             <canvas id="line"></canvas>
                           </div>
@@ -57,7 +57,7 @@ $codesnippet = DB::table('posts')
                         </a>
                       </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6">
+                    <!-- <div class="col-xl-3 col-sm-6">
                       <div class="card card-mini mb-4">
                         <div class="card-body">
                           <h2 class="mb-1">9,503</h2>
@@ -67,6 +67,6 @@ $codesnippet = DB::table('posts')
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
 @endsection

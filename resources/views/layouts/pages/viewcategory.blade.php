@@ -2,6 +2,10 @@
 Posts
 @endsection
 @extends('layouts.master_home')
+
+@section('meta_keywords','category,categories,posts')
+@section('meta_description', 'Posts of www.programmingster.com')
+
 @section('home_content')
 <!-- ======= Intro Single ======= -->
     <section class="intro-single">
@@ -38,13 +42,13 @@ Posts
               <article class="card shadow">
                 <img class="rounded card-img-top img-fluid" src="{{asset($post->post_img)}}" alt="post-thumb">
                 <div class="card-body">
-                  <h4 class="card-title"><a class="text-dark" href="blog-single.html">{{$post -> title}}</a>
+                  <h4 class="card-title"><a class="text-dark" href="{{url('post/'.$post->slug)}}">{{$post -> title}}</a>
                   </h4>
                   <p class="cars-text">{{substr(strip_tags($post ->description . '...'),0,80)}}</p>
                   <div class="card-date">
                         <span class="date-b">{{Carbon\Carbon::parse($post->created_at)->diffForHumans()}}</span>
                   </div>
-                  <a href="{{url('post/'.$post->id)}}" class="btn btn-xs btn-primary">Read More</a>
+                  <a href="{{url('post/'.$post->slug)}}" class="btn btn-xs btn-primary">Read More</a>
                 </div>
               </article>
             </div>

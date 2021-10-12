@@ -3,7 +3,8 @@ Contact Me
 @endsection
 
 @extends('layouts.master_home')
-
+@section('meta_keywords','contact,contact us')
+@section('meta_description', 'Contact page of www.programmingster.com')
 
 @section('home_content')
     <main id="main">
@@ -27,7 +28,7 @@ Contact Me
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
               <h1 class="title-single">Get in touch</h1>
-              <span class="color-text-a">Have any questions? We would love to hear from you..</span>
+              <span class="color-text-a">Have any questions? I would love to hear from you..</span>
             </div>
           </div>
           <div class="col-md-12 col-lg-4">

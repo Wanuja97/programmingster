@@ -34,6 +34,14 @@ $categories = DB::table('categories')->get();
                                     @enderror
                                 </div>
                                 <div class="mb-3">
+                                    <label for="inputpostslug" class="form-label">Post Slug</label>
+                                   <input type="text" name="slug" class="form-control" id="inputpostslug" aria-describedby="emailHelp" value="{{$post->slug}}" >
+
+                                    @error('slug')
+                                        <span class="text-danger"> {{$message}} </span>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
                                     <select class="form-control" aria-label="Default select example" name="cat_id" required>
                                         <option selected >Select Post Category</option>
                                         @foreach($categories as $cat)
@@ -48,7 +56,13 @@ $categories = DB::table('categories')->get();
                                         <span class="text-danger"> {{$message}} </span>
                                     @enderror
                                 </div>
-
+                                <div class="mb-3">
+                                    <label for="inputpostkeywords" class="form-label">Post keywords</label>
+                                    <textarea class="form-control" name ="keywords" id="inputpostkeywords" rows="5" value="">{{$post->keywords}}</textarea>
+                                    @error('keywords')
+                                        <span class="text-danger"> {{$message}} </span>
+                                    @enderror
+                                </div>
                                 <div class="mb-3">
                                     <label for="inputPostImage" class="form-label">Post Image</label>
                                     <input type="file" name="image" class="form-control" id="inputPostImage" aria-describedby="emailHelp">

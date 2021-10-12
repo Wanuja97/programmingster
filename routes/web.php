@@ -31,7 +31,7 @@ Route::get('/about',[PublicController::class,'about'])->name('about');
 
 //Home category select
 Route::get('category/{id}',[PublicController::class,'ViewCategory']);
-Route::get('post/{id}',[PublicController::class,'ViewPost']);
+Route::get('post/{slug}',[PublicController::class,'ViewPost'])->where('slug','[\w\d\-\_]+');
 
 //Admin 
 Route::get('admin/profile',[HomeController::class,'Adminprofile'])->name('admin.profile');

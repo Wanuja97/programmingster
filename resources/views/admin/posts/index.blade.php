@@ -25,9 +25,17 @@ $categories = DB::table('categories')->get();
                                 <div class="mb-3">
 
                                     <label for="inputPostTitle" class="form-label">Post Title</label>
-                                    <input type="text" name="title" class="form-control" id="inputPostTitle" aria-describedby="emailHelp" placeholder="Enter Post Title">
+                                    <input type="text" name="title" class="form-control" id="inputPostTitle" aria-describedby="emailHelp" placeholder="Enter Post Title" required>
 
                                     @error('title')
+                                        <span class="text-danger"> {{$message}} </span>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputpostslug" class="form-label">Post Slug</label>
+                                   <input type="text" name="slug" class="form-control" id="inputpostslug" aria-describedby="emailHelp" placeholder="Enter Post Slug">
+
+                                    @error('slug')
                                         <span class="text-danger"> {{$message}} </span>
                                     @enderror
                                 </div>
@@ -43,6 +51,13 @@ $categories = DB::table('categories')->get();
                                     <label for="inputPostDesc" class="form-label">Post Description</label>
                                     <textarea class="form-control" name ="description" id="inputPostDesc" rows="5" placeholder="Enter Post Description"></textarea>
                                     @error('description')
+                                        <span class="text-danger"> {{$message}} </span>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
+                                    <label for="inputpostkeywords" class="form-label">Post keywords</label>
+                                    <textarea class="form-control" name ="keywords" id="inputpostkeywords" rows="5" placeholder="Enter Post keywords"></textarea>
+                                    @error('keywords')
                                         <span class="text-danger"> {{$message}} </span>
                                     @enderror
                                 </div>

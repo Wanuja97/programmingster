@@ -41,8 +41,12 @@ class PublicController extends Controller
 
 
     // --------------------------------------- View Post --------------------------------------------------------
-    public function ViewPost($id){
-        $post = Post::find($id);
+    public function ViewPost($slug){
+        $post = DB::table('posts')
+                ->select('posts.*')
+                ->where('posts.slug', '=', $slug)
+                ->first();
+        // $post = Post::find($id);
         return view('layouts.pages.post',compact('post'));
     }
 

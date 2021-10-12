@@ -2,6 +2,8 @@
 Privacy Policy
 @endsection
 @extends('layouts.master_home')
+@section('meta_keywords','privacy policy,privacy')
+@section('meta_description', 'Privacy policy of of www.programmingster.com')
 
 @section('home_content')
 <section class="intro-single ">

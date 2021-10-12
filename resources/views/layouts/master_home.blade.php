@@ -6,18 +6,20 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta name="author" content="Wanuja Ranasinghe(wanuja18@gmail.com)">
   <title>@yield('title','programmingster')</title>
-  <link rel="canonical" href="https://www.programmingster.com/">
-  
-  <meta content="" name="description">
-  <meta name="Keywords" content="HTML, Python, SQL, JavaScript, How to, PHP, Java, Bootstrap, CSS, MySQL, Software Engineering methods, React, Angular, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Flutter, Learning, Lessons, Source code, Demos, Tips">
+  <link rel="canonical" href="{{url()->current()}}"/>
+
+  <meta name="keywords" content="@yield('meta_keywords','HTML, Python, SQL, JavaScript, How to, PHP, Java, Bootstrap, CSS, MySQL, Software Engineering methods, React, Angular, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Flutter, Learning, Lessons, Source code, Demos, Tips')">
+  <meta name="description" content="@yield('meta_description','Welcome to programmingster..Make it Work - Make it Right - Make it Fast')">
   <meta name="robots" content="index, follow">
   <!-- Social Media Sharing Tags -->
   <!--  Essential META Tags -->
     <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="Page title">
-    <meta property="og:description" content="Test description">
+    <meta property="og:title" content="@yield('title','programmingster')">
+    <meta property="og:description" content="@yield('meta_description','Welcome to programmingster..Make it Work - Make it Right - Make it Fast')">
     <meta property="og:type" content="website">
     <meta property="og:image" content="favicon-400x400.png">
+    <meta property="og:image:width" content="640">
+    <meta property="og:image:height" content="360">
     <meta property="og:url" content="{{ request()->fullUrl() }}">
     <meta name="twitter:card" content="favicon-400x400.png">
 
@@ -25,8 +27,9 @@
     <!--  Non-Essential, But Recommended -->
 
     <meta property="og:site_name" content="programminster">
-    <meta name="twitter:image:alt" content="Alt text for image">
-
+    <meta name="twitter:image:alt" content="programmingster logo">
+    <meta name="twitter:title" content="@yield('title','programmingster')"/>
+    <meta name="twitter:description" content="@yield('meta_description','Welcome to programmingster..Make it Work - Make it Right - Make it Fast')"/>
 
      <!-- Non-Essential, But Required for Analytics
 
