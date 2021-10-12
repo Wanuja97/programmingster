@@ -46,6 +46,13 @@ $categories = DB::table('categories')->get();
                                         <span class="text-danger"> {{$message}} </span>
                                     @enderror
                                 </div>
+                                <div class="mb-3">
+                                    <label for="inputpostkeywords" class="form-label">Post keywords</label>
+                                    <textarea class="form-control" name ="keywords" id="inputpostkeywords" rows="5" placeholder="Enter Post keywords"></textarea>
+                                    @error('keywords')
+                                        <span class="text-danger"> {{$message}} </span>
+                                    @enderror
+                                </div>
 
                                 <div class="mb-3">
                                     <label for="inputPostImage" class="form-label">Post Image</label>

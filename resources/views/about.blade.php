@@ -3,6 +3,9 @@ About
 @endsection
 @extends('layouts.master_home')
 
+@section('meta_keywords','about,about us')
+@section('meta_description', 'About page of www.programmingster.com')
+
 
 @section('home_content')
     <section class="intro-single">
@@ -11,6 +14,7 @@ About
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
               <h1 class="title-single">About</h1>
+              <p>The purpose of creating this website was my passion for programming and, share my knowledge about Information Technology with people who are interested in and searching about it in all over the world. In addition, It aimed to improve my knowledge as well.</p>
             </div>
           </div>
           <div class="col-md-12 col-lg-4">

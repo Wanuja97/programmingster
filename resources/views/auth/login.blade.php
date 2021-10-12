@@ -1,4 +1,4 @@
-@section('title')
+@section('app.name')
 Welcome
 @endsection
 <x-guest-layout>

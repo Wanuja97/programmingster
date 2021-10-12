@@ -33,7 +33,7 @@ class PostController extends Controller
         $hackerrank = DB::table('posts')
             ->join('categories', 'posts.cat_id', '=', 'categories.id')
             ->select('posts.*')
-            ->where('categories.category_name', '=', 'HackeRank Solutions')
+            ->where('categories.category_name', '=', 'Hackground')
             ->get();
         
         
@@ -45,7 +45,7 @@ class PostController extends Controller
         $codesnippet = DB::table('posts')
             ->join('categories', 'posts.cat_id', '=', 'categories.id')
             ->select('posts.*')
-            ->where('categories.category_name', '=', 'Code Chef')
+            ->where('categories.category_name', '=', 'Codewall')
             ->get();
         
         
@@ -91,7 +91,8 @@ class PostController extends Controller
             "cat_id" => $request->cat_id,
             "description" => $request->description,
             "post_img" => $last_img,
-            "content" => $request->editor
+            "content" => $request->editor,
+            "keywords" => $request->keywords
 
         );
 
@@ -172,8 +173,8 @@ class PostController extends Controller
             "cat_id" => $request->cat_id,
              'post_img' => $last_img,
             "description" => $request->description,
-            "content" => $request->editor
-
+            "content" => $request->editor,
+            "keywords" => $request->keywords
         );
 
             $post  = Post::where('id',$id)->update($postArray);

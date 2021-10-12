@@ -11,13 +11,13 @@ Programmingster
      <section id="hero">
       <div class="hero-container">
         <h3>Welcome to <strong>Programmingster</strong></h3>
-        <h1>Sample h1 title goes here</h1>
-        <h2>Sample h2 Description goes here</h2>
-        <a href="#category" class="btn-get-started scrollto btn-border">Get Started</a>
+        <h1><q>Make it Work - Make it Right - Make it Fast</q></h1>
+        <h2>-- Kent Beck</h2>
+        <a href="#category" class="btn-get-started  btn-border">Get Started</a>
       </div>
   </section><!-- End Hero -->
      
-  <section id="category">
+  <section id="category" style="text-align:center;">
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
@@ -34,7 +34,7 @@ Programmingster
                 <div class="icon"><i class="bi bi-file-earmark-code-fill"></i></div>
               </div>
               <h2 class="title"><a href="#">{{$item -> category_name}}</a></h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad doloribus unde, odio sed est doloremque, voluptatibus,.</p>
+              <p>{{$item ->description}}</p>
             </div>
             </a>
           </div>
@@ -50,7 +50,7 @@ Programmingster
     <section class="section-news section-t8" id="latest" data-aos="fade-up">
       <div class="container">
         <header class="section-header">
-          <h3>Latest Articles</h3>
+          <h3>Latest Posts</h3>
         </header>
         <div class="row about-cols">
         @foreach($latestposts as $item)

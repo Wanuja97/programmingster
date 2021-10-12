@@ -2,6 +2,10 @@
 Posts
 @endsection
 @extends('layouts.master_home')
+
+@section('meta_keywords','category,categories,posts')
+@section('meta_description', 'Posts of www.programmingster.com')
+
 @section('home_content')
 <!-- ======= Intro Single ======= -->
     <section class="intro-single">

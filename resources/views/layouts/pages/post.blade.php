@@ -2,6 +2,11 @@
 {{$post->title}}
 @endsection
 
+@section('meta_keywords', $post->keywords)
+@section('meta_description', $post->description)
+
+
+
 @extends('layouts.master_home')
 @section('home_content')
     <section class="intro-single">
